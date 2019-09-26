@@ -1,0 +1,57 @@
+{
+  "name": "de-ci_e2e_tests",
+  "version": "0.0.1",
+  "description": "DE-CI end to end test with jest and puppeteer",
+  "repository": "https://git.kpn.org/projects/DE/repos/de-ci-e2e",
+  "author": "KPN Co. <info@kpn.com> (http://www.kpn.com)",
+  "contributors": [
+    "Saeed Ghareh Daghi <saeed.gharehdaghi@kpn.com>"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "test": "NODE_PATH=./tests jest  --coverage",
+    "test:only": "NODE_PATH=./tests jest -- $TEST_NAMES --colors --forceExit --detectOpenHandles --coverage",
+    "test:debug": "NODE_PATH=./tests node --inspect node_modules/.bin/jest --runInBand --coverage",
+    "lint": "./node_modules/.bin/eslint tests"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "testMatch": [
+      "**/?(*.)(test).js?(x)"
+    ],
+    "globals": {
+      "__JASMINE_TIMEOUT__": 150000
+    },
+    "coverageThreshold": {
+      "global": {
+        "statements": 100,
+        "branches": 100,
+        "functions": 100,
+        "lines": 100
+      }
+    },
+    "coverageReporters": [
+      "lcov",
+      "html"
+    ]
+  },
+  "dependencies": {
+    "eslint-plugin-jest": "^22.17.0",
+    "jest-cli": "^24.9.0",
+    "package.json": "^2.0.1",
+    "yarn": "^1.19.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "chalk": "^2.4.2",
+    "eslint": "^6.5.1",
+    "jest": "^24.9.0",
+    "jest-puppeteer": "^4.3.0",
+    "prettier": "^1.18.2",
+    "puppeteer": "^1.20.0",
+    "rimraf": "^2.6.3"
+  }
+}
