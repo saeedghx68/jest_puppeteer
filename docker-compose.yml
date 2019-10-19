@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  e2e:
+    build: .
+    networks:
+      - de_ci_e2e
+
+networks:
+  de_ci_e2e:
