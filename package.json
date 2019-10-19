@@ -1,11 +1,10 @@
 {
   "name": "de-ci_e2e_tests",
   "version": "0.0.1",
-  "description": "DE-CI end to end test with jest and puppeteer",
-  "repository": "https://git.kpn.org/projects/DE/repos/de-ci-e2e",
-  "author": "KPN Co. <info@kpn.com> (http://www.kpn.com)",
+  "description": "End to end test with jest and puppeteer",
+  "author": "Saeed Ghareh Daghi",
   "contributors": [
-    "Saeed Ghareh Daghi <saeed.gharehdaghi@kpn.com>"
+    "Saeed Ghareh Daghi <saeed.ghx68@gmail.com"
   ],
   "license": "MIT",
   "scripts": {
