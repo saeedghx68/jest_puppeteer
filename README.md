@@ -1,4 +1,4 @@
-# End To End Tests with jest and Puppeteer
+# End To End Tests boilerplate with jest and Puppeteer
 This repository is created for `end to end tests`.
 We use `nvm` to install `nodejs` and then install `yarn` to install packages
 
