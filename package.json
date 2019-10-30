@@ -1,17 +1,19 @@
 {
-  "name": "de-ci_e2e_tests",
+  "name": "e2e_tests",
   "version": "0.0.1",
   "description": "End to end test with jest and puppeteer",
-  "author": "Saeed Ghareh Daghi",
   "contributors": [
-    "Saeed Ghareh Daghi <saeed.ghx68@gmail.com"
+    "Saeed Ghareh Daghi <saeed.gharehdaghi@kpn.com>",
+    "Ilhan Mercan <ilhan.mercan@kpn.com>"
   ],
   "license": "MIT",
   "scripts": {
-    "test": "NODE_PATH=./tests jest  --coverage",
-    "test:only": "NODE_PATH=./tests jest -- $TEST_NAMES --colors --forceExit --detectOpenHandles --coverage",
-    "test:debug": "NODE_PATH=./tests node --inspect node_modules/.bin/jest --runInBand --coverage",
-    "lint": "./node_modules/.bin/eslint tests"
+    "test": "node --max-old-space-size=18192 --expose-gc node_modules/jest-cli/bin/jest.js tests --colors --forceExit --detectOpenHandles",
+    "test:only": "node --max-old-space-size=18192 --expose-gc node_modules/jest-cli/bin/jest.js -t $TEST_NAMES --colors --forceExit --detectOpenHandles",
+    "test:debug": "node --inspect node_modules/.bin/jest tests --runInBand",
+    "test:wo": "node --max-old-space-size=18192 --expose-gc node_modules/jest-cli/bin/jest.js tests --watch -t $TEST_NAMES --colors --forceExit --detectOpenHandles",
+    "lint": "./node_modules/.bin/eslint tests",
+    "lint:fix": "./node_modules/.bin/eslint -- --fix"
   },
   "jest": {
     "testEnvironment": "node",
@@ -23,21 +25,14 @@
     ],
     "globals": {
       "__JASMINE_TIMEOUT__": 150000
-    },
-    "coverageThreshold": {
-      "global": {
-        "statements": 100,
-        "branches": 100,
-        "functions": 100,
-        "lines": 100
-      }
-    },
-    "coverageReporters": [
-      "lcov",
-      "html"
-    ]
+    }
   },
   "dependencies": {
+    "@babel/core": "^7.6.4",
+    "babel-plugin-root-import": "^6.4.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "dotenv": "^8.2.0",
     "eslint-plugin-jest": "^22.17.0",
     "jest-cli": "^24.9.0",
     "package.json": "^2.0.1",
