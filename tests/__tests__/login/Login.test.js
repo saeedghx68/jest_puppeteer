@@ -1,5 +1,5 @@
-const customerCredentials = require('__fixtures__/customerCredentials')
-const constance = require('__constance__')
+import customerCredentials from '~/tests/__fixtures__/customerCredentials'
+import constance from '~/tests/__constance__'
 
 describe('login page',  () => {
     let page
