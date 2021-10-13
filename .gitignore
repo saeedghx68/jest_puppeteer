@@ -15,3 +15,6 @@ coverage/
 
 # Yarn Integrity file
 .yarn-integrity
+
+# IDE files
+.idea
